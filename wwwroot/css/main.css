@@ -1,0 +1,332 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and font */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    
+}
+
+/* Navbar Styling */
+header {
+    background-color: #6a1b9a; 
+     padding: 20px 0; 
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+}
+
+/* Navbar Hover Effect */
+nav ul li a:hover {
+    color: #ffccbc; 
+    text-decoration: underline;
+}
+
+/* Dropdown Menu */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background-color: #6a1b9a;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.dropdown-content a {
+    color: #6a1b9a;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Show the dropdown on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #4a148c; 
+}
+
+/* Main Section Styling */
+section {
+    padding: 40px;
+    text-align: center;
+}
+
+#home {
+    background-color: #ffccbc; 
+}
+
+#post-event {
+    background-color: #c8e6c9; 
+}
+
+section h1, section h2 {
+    color: #6a1b9a;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #6a1b9a; 
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Button Styles */
+button {
+    background-color: #6a1b9a;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #4a148c; 
+}
+
+/* Event List Section */
+.event-list-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Event Card Styling */
+.event-card {
+    background-color: #fff;
+    padding: 20px;
+    margin: 10px;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.event-card h2 {
+    color: #333;
+}
+
+.event-card p {
+    color: #555;
+}
+
+/* Form Styling */
+.form-container {
+    max-width: 600px;
+    margin: 115px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h1 {
+    text-align: center;
+    color: #6a1b9a;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input, 
+.form-group textarea, 
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.form-group textarea {
+    height: 100px;
+    resize: none;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    background-color: #6a1b9a;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #4a148c;
+}
+
+.back-btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    background-color: #4a148c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.back-btn:hover {
+    background-color: #6a1b9a;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    .event-card {
+        width: 100%;
+    }
+}
+
+/* Map Styling */
+.map-container iframe {
+    width: 100%;
+    border: 0;
+    border-radius: 8px;
+    height: 300px;
+}
+
+/* Contact Us Page */
+.contact-details, .contact-form {
+    margin-bottom: 20px;
+}
+
+.contact-details h2, .contact-form h2 {
+    color: #6a1b9a;
+}
+
+.contact-details p {
+    margin: 5px 0;
+}
+
+.contact-form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.contact-form input, 
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.contact-form textarea {
+    resize: none;
+    height: 100px;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    background-color: #6a1b9a;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background-color: #4a148c;
+}
+
+footer {
+    background-color: #6a1b9a;
+    color: white;
+    text-align: center;
+    padding: 10px 20px;
+    margin-top: 20px;
+}
+.carousel-item.active {
+    background-color: rgb(112, 212, 212); 
+    height: 600px;
+    width: 100%;
+}
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+

@@ -1,0 +1,61 @@
+﻿@{
+    ViewData["Title"] = "Post";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    body {
+        background-image: url('/images/IMG_9096.JPG');
+        background-size: 100%;
+    }
+</style>
+<body>
+    <div class="form-container">
+        <h1>Post Your Event</h1>
+        <form id="post-event-form">
+            <!-- Event Name -->
+            <div class="form-group">
+                <label for="event-name">Event Name:</label>
+                <input type="text" id="event-name" name="event-name" placeholder="Enter event name" required>
+            </div>
+
+            <!-- Event Description -->
+            <div class="form-group">
+                <label for="event-description">Event Description:</label>
+                <textarea id="event-description" name="event-description" placeholder="Describe your event" required></textarea>
+            </div>
+
+            <!-- Event Date -->
+            <div class="form-group">
+                <label for="event-date">Event Date:</label>
+                <input type="date" id="event-date" name="event-date" required>
+            </div>
+
+            <!-- Event Time -->
+            <div class="form-group">
+                <label for="event-time">Event Time:</label>
+                <input type="time" id="event-time" name="event-time" required>
+            </div>
+
+            <!-- Event Category -->
+            <div class="form-group">
+                <label for="event-category">Event Category:</label>
+                <select id="event-category" name="event-category" required>
+                    <option value="">Select Category</option>
+                    <option value="Music">Music</option>
+                    <option value="Sports">Sports</option>
+                    <option value="Conference">Conference</option>
+                    <option value="Workshop">Workshop</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="submit-btn">Register Event</button>
+        </form>
+
+        <!-- Back to Home Button -->
+        <button onclick="window.location.href='/Home/Index'" class="back-btn">Back to Home</button>
+
+    </div>
+
+    </body>
