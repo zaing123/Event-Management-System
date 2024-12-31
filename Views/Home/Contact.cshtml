@@ -1,4 +1,4 @@
-﻿@{
+@{
     ViewData["Title"] = "Contact";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -8,7 +8,32 @@
         <p style="font-size: 20px;">We would love to hear from you!</p>
     </section>
 
-    <main style="padding: 40px 20px;  background-image: url('/images/contact.jpeg')">
+    <main style="padding: 40px 20px; background-image: url('/images/contact.jpeg')">
+        <!-- Display Messages -->
+        <div style="max-width: 800px; margin: 0 auto; padding: 15px;">
+            @if (TempData["FormSubmitted"] == null)
+            {
+                <!-- Display prompt before form submission -->
+                <p style="font-size: 20px; text-align: center; color: blue;">
+                    @ViewBag.Message
+                </p>
+            }
+            @if (TempData["Alert"] != null)
+            {
+                <!-- Display alert messages -->
+                <p style="font-size: 20px; text-align: center; color: red;">
+                    @TempData["Alert"]
+                </p>
+            }
+            @if (ViewData["Response"] != null)
+            {
+                <!-- Display response after successful submission -->
+                <p style="font-size: 20px; text-align: center; color: green;">
+                    @ViewData["Response"]
+                </p>
+            }
+        </div>
+
         <!-- Contact Details -->
         <div style="max-width: 800px; margin: 0 auto; padding: 30px; background-color: #f9f9f9; border-radius: 8px; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);">
             <h2 style="font-size: 28px; color: #6a1b9a;">Get in Touch</h2>
@@ -18,21 +43,24 @@
         </div>
 
         <!-- Contact Form -->
-        <div style="max-width: 800px; margin: 40px auto; padding: 30px; background-color: #f9f9f9; border-radius: 8px; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);">
-            <h2 style="font-size: 28px; color: #6a1b9a;">Send Us a Message</h2>
-            <form id="contact-form">
-                <label for="name" style="font-size: 18px; color: #555;">Your Name:</label><br>
-                <input type="text" id="name" name="name" placeholder="Enter your name" required style="width: 100%; padding: 12px; margin: 10px 0; border-radius: 4px; border: 1px solid #ddd; box-sizing: border-box;"><br>
+        @if (TempData["FormSubmitted"] == null)
+        {
+            <div style="max-width: 800px; margin: 40px auto; padding: 30px; background-color: #f9f9f9; border-radius: 8px; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);">
+                <h2 style="font-size: 28px; color: #6a1b9a;">Send Us a Message</h2>
+                <form id="contact-form" method="post" action="/Home/Contact">
+                    <label for="name" style="font-size: 18px; color: #555;">Your Name:</label><br>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required style="width: 100%; padding: 12px; margin: 10px 0; border-radius: 4px; border: 1px solid #ddd; box-sizing: border-box;"><br>
 
-                <label for="email" style="font-size: 18px; color: #555;">Your Email:</label><br>
-                <input type="email" id="email" name="email" placeholder="Enter your email" required style="width: 100%; padding: 12px; margin: 10px 0; border-radius: 4px; border: 1px solid #ddd; box-sizing: border-box;"><br>
+                    <label for="email" style="font-size: 18px; color: #555;">Your Email:</label><br>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required style="width: 100%; padding: 12px; margin: 10px 0; border-radius: 4px; border: 1px solid #ddd; box-sizing: border-box;"><br>
 
-                <label for="message" style="font-size: 18px; color: #555;">Your Message:</label><br>
-                <textarea id="message" name="message" placeholder="Type your message" required style="width: 100%; padding: 12px; margin: 10px 0; border-radius: 4px; border: 1px solid #ddd; height: 150px; box-sizing: border-box;"></textarea><br>
+                    <label for="message" style="font-size: 18px; color: #555;">Your Message:</label><br>
+                    <textarea id="message" name="message" placeholder="Type your message" required style="width: 100%; padding: 12px; margin: 10px 0; border-radius: 4px; border: 1px solid #ddd; height: 150px; box-sizing: border-box;"></textarea><br>
 
-                <button type="submit" style="background-color: #8e24aa; color: white; padding: 12px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 18px; width: 100%;">Submit</button>
-            </form>
-        </div>
+                    <button type="submit" style="background-color: #8e24aa; color: white; padding: 12px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 18px; width: 100%;">Submit</button>
+                </form>
+            </div>
+        }
 
         <!-- Embedded Map -->
         <div style="max-width: 800px; margin: 40px auto;">
@@ -47,4 +75,3 @@
         </div>
     </main>
 </body>
- 
