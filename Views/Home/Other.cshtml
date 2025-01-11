@@ -14,32 +14,22 @@
     <h1>Others Events</h1>
 
     <div id="events-list">
-        <div class="event-item">
-            <img src="/images/o1.jpg" alt="Jazz Night">
-            <div>
-                <h2>Stargazing Night</h2>
-                <p>A guided astronomy event with telescopes to explore the night sky.</p>
-                <button>Learn More</button>
-            </div>
-        </div>
+        @foreach (var eventItem in Model)
+        {
+            <div class="event-item">
+                <img src="@eventItem.picture" alt="@eventItem.name">
+                <div>
+                    <h2>@eventItem.name</h2>
+                    <p><strong>Description:</strong> @eventItem.description</p>
+                    <p><strong>Date:</strong> @eventItem.date</p>
+                    <p><strong>Time:</strong> @eventItem.time</p>
+                    <p><strong>Category:</strong> @eventItem.category</p>
+                    <form method="post" action="@Url.Action("Delete", "Home", new { id = eventItem.Id })">
+                        <button type="submit" class="delete-btn">Delete</button>
+                    </form>
+                </div>
 
-        <div class="event-item">
-            <img src="/images/o2.jpg" alt="Rock Fest">
-            <div>
-                <h2>Food Truck Carnival</h2>
-                <p>A gathering of gourmet food trucks with diverse cuisines and live music.</p>
-                <button>Learn More</button>
             </div>
-        </div>
-
-        <div class="event-item">
-            <img src="/images/o4.jpg" alt="Classical Symphony">
-            <div>
-                <h2>Book Swap Bonanza</h2>
-                <p>A community event to exchange books and discover new reads.</p>
-                <button>Learn More</button>
-            </div>
-        </div>
+        }
     </div>
-
 </body>

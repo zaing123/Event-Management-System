@@ -11,35 +11,35 @@
 <body>
     <div class="form-container">
         <h1>Post Your Event</h1>
-        <form id="post-event-form">
+        <form id="post-event-form" method="post" action="/Home/Post" enctype="multipart/form-data">
             <!-- Event Name -->
             <div class="form-group">
                 <label for="event-name">Event Name:</label>
-                <input type="text" id="event-name" name="event-name" placeholder="Enter event name" required>
+                <input type="text" id="event-name" name="name" placeholder="Enter event name" required>
             </div>
 
             <!-- Event Description -->
             <div class="form-group">
                 <label for="event-description">Event Description:</label>
-                <textarea id="event-description" name="event-description" placeholder="Describe your event" required></textarea>
+                <textarea id="event-description" name="description" placeholder="Describe your event" required></textarea>
             </div>
 
             <!-- Event Date -->
             <div class="form-group">
                 <label for="event-date">Event Date:</label>
-                <input type="date" id="event-date" name="event-date" required>
+                <input type="date" id="event-date" name="date" required>
             </div>
 
             <!-- Event Time -->
             <div class="form-group">
                 <label for="event-time">Event Time:</label>
-                <input type="time" id="event-time" name="event-time" required>
+                <input type="time" id="event-time" name="time" required>
             </div>
 
             <!-- Event Category -->
             <div class="form-group">
                 <label for="event-category">Event Category:</label>
-                <select id="event-category" name="event-category" required>
+                <select id="event-category" name="category" required>
                     <option value="">Select Category</option>
                     <option value="Music">Music</option>
                     <option value="Sports">Sports</option>
@@ -49,9 +49,16 @@
                 </select>
             </div>
 
+            <!-- Event Picture -->
+            <div class="form-group">
+                <label for="event-picture">Event Picture:</label>
+                <input type="file" id="event-picture" name="picture" accept="image/*">
+            </div>
+
             <!-- Submit Button -->
             <button type="submit" class="submit-btn">Register Event</button>
         </form>
+
 
         <!-- Back to Home Button -->
         <button onclick="window.location.href='/Home/Index'" class="back-btn">Back to Home</button>

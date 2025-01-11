@@ -14,32 +14,22 @@
     <h1>Conferences Events</h1>
 
     <div id="events-list">
-        <div class="event-item">
-            <img src="/images/c1.jpg" alt="Jazz Night">
-            <div>
-                <h2>CES</h2>
-                <p>Showcasing innovations in consumer electronics and IoT.</p>
-                <button>Learn More</button>
-            </div>
-        </div>
+        @foreach (var eventItem in Model)
+        {
+            <div class="event-item">
+                <img src="@eventItem.picture" alt="@eventItem.name">
+                <div>
+                    <h2>@eventItem.name</h2>
+                    <p><strong>Description:</strong> @eventItem.description</p>
+                    <p><strong>Date:</strong> @eventItem.date</p>
+                    <p><strong>Time:</strong> @eventItem.time</p>
+                    <p><strong>Category:</strong> @eventItem.category</p>
+                    <form method="post" action="@Url.Action("Delete", "Home", new { id = eventItem.Id })">
+                        <button type="submit" class="delete-btn">Delete</button>
+                    </form>
+                </div>
 
-        <div class="event-item">
-            <img src="/images/c2.jpg" alt="Rock Fest">
-            <div>
-                <h2>IEEE ICC</h2>
-                <p> Focused on communication networks and Industry 5.0.</p>
-                <button>Learn More</button>
             </div>
-        </div>
-
-        <div class="event-item">
-            <img src="/images/c4.JPG" alt="Classical Symphony">
-            <div>
-                <h2>Smart Home Expo </h2>
-                <p>Dedicated to smart home automation solutions.</p>
-                <button>Learn More</button>
-            </div>
-        </div>
+        }
     </div>
-
 </body> 

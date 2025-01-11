@@ -12,34 +12,23 @@
 <body>
 
     <h1>cultural Events</h1>
-
     <div id="events-list">
-        <div class="event-item">
-            <img src="/images/cu1.jpeg" alt="Jazz Night">
-            <div>
-                <h2>Heritage Festival</h2>
-                <p>Showcasing traditional music, dance, and cuisine.</p>
-                <button>Learn More</button>
-            </div>
-        </div>
+        @foreach (var eventItem in Model)
+        {
+            <div class="event-item">
+                <img src="@eventItem.picture" alt="@eventItem.name">
+                <div>
+                    <h2>@eventItem.name</h2>
+                    <p><strong>Description:</strong> @eventItem.description</p>
+                    <p><strong>Date:</strong> @eventItem.date</p>
+                    <p><strong>Time:</strong> @eventItem.time</p>
+                    <p><strong>Category:</strong> @eventItem.category</p>
+                    <form method="post" action="@Url.Action("Delete", "Home", new { id = eventItem.Id })">
+                        <button type="submit" class="delete-btn">Delete</button>
+                    </form>
+                </div>
 
-        <div class="event-item">
-            <img src="/images/cu5.jpeg" alt="Rock Fest">
-            <div>
-                <h2>Global Village Fair</h2>
-                <p>Celebrating global arts, crafts, and performances.</p>
-                <button>Learn More</button>
             </div>
-        </div>
-
-        <div class="event-item">
-            <img src="/images/cu2.jpeg" alt="Classical Symphony">
-            <div>
-                <h2>Folk Arts Fiesta </h2>
-                <p>Featuring folk dances, storytelling, and crafts.</p>
-                <button>Learn More</button>
-            </div>
-        </div>
+        }
     </div>
-
 </body>

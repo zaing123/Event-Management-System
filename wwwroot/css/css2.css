@@ -58,6 +58,7 @@ h1 {
     }
 
     .event-item button {
+        display: flex;
         padding: 12px 24px;
         border: none;
         background-color: #007BFF;

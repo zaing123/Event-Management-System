@@ -1,0 +1,117 @@
+﻿/* Header Section */
+section {
+    text-align: center;
+    background-color: #8e24aa;
+    color: white;
+    padding: 25px 5px;
+    margin-bottom: 10px;
+}
+
+    section h1 {
+        margin: 0;
+        font-size: 48px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    section p {
+        font-size: 20px;
+    }
+
+/* Main Section */
+main {
+    padding: 40px 20px;
+    background-image: url('/images/contact.jpeg');
+}
+
+/* Display Messages */
+#messages {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 15px;
+    text-align: center;
+}
+
+    #messages p {
+        font-size: 20px;
+    }
+
+    #messages .blue {
+        color: blue;
+    }
+
+    #messages .red {
+        color: red;
+    }
+
+    #messages .green {
+        color: green;
+    }
+
+/* Contact Details */
+.contact-details {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+    .contact-details h2 {
+        font-size: 28px;
+        color: #6a1b9a;
+    }
+
+    .contact-details p {
+        font-size: 18px;
+        color: #555;
+    }
+
+/* Contact Form */
+.contact-form {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+    .contact-form h2 {
+        font-size: 28px;
+        color: #6a1b9a;
+    }
+
+    .contact-form label {
+        font-size: 18px;
+        color: #555;
+    }
+
+    .contact-form input, .contact-form textarea {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+    }
+
+    .contact-form button {
+        background-color: #8e24aa;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+        .contact-form button:hover {
+            background-color: #6a1b9a;
+        }
+
+/* Embedded Map */
+iframe {
+    border: 0;
+    width: 100%;
+    height: 450px;
+}

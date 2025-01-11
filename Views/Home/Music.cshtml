@@ -14,32 +14,23 @@
     <h1>Music Events</h1>
 
     <div id="events-list">
-        <div class="event-item">
-            <img src="/images/jazz-night.jpg" alt="Jazz Night">
-            <div>
-                <h2>Jazz Night</h2>
-                <p>Enjoy a night of smooth jazz with talented musicians.</p>
-                <button>Learn More</button>
-            </div>
-        </div>
+        @foreach (var eventItem in Model)
+        {
+            <div class="event-item">
+                <img src="@eventItem.picture" alt="@eventItem.name">
+                <div>
+                    <h2>@eventItem.name</h2>
+                    <p><strong>Description:</strong> @eventItem.description</p>
+                    <p><strong>Date:</strong> @eventItem.date</p>
+                    <p><strong>Time:</strong> @eventItem.time</p>
+                    <p><strong>Category:</strong> @eventItem.category</p>
+                    <form method="post" action="@Url.Action("Delete", "Home", new { id = eventItem.Id })">
+                        <button type="submit" class="delete-btn">Delete</button>
+                    </form>
+                </div>
 
-        <div class="event-item">
-            <img src="/images/rock-fest.jpg" alt="Rock Fest">
-            <div>
-                <h2>Rock Fest</h2>
-                <p>Experience the thrill of live rock music with top bands.</p>
-                <button>Learn More</button>
             </div>
-        </div>
-
-        <div class="event-item">
-            <img src="/images/classical-symphony.jpg" alt="Classical Symphony">
-            <div>
-                <h2>Classical Symphony</h2>
-                <p>Immerse yourself in a timeless classical music performance.</p>
-                <button>Learn More</button>
-            </div>
-        </div>
+        }
     </div>
 
 </body>
