@@ -66,7 +66,7 @@ Event Management System is a web application fully built using ASP.NET MVC that 
 
 ## 👨‍💻 Author
 
-**Muhammad Zain Farooq**  
+Ruhma  
 Software Engineering Student  
 
 ---
